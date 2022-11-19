@@ -25,17 +25,17 @@ FROM mcr.microsoft.com/dotnet/sdk:7.0-jammy-amd64 AS build
 ENV DOTNET_CLI_HOME=/tmp/
 
 WORKDIR /src
-COPY ["src/TJPA.HtmlToPdfService.csproj", "."]
-RUN dotnet restore "./TJPA.HtmlToPdfService.csproj"
+COPY ["src/Html2PdfApi.csproj", "."]
+RUN dotnet restore "./Html2PdfApi.csproj"
 COPY src/. .
-RUN dotnet build "TJPA.HtmlToPdfService.csproj" -c Release -o /app/build
+RUN dotnet build "Html2PdfApi.csproj" -c Release -o /app/build
 
 # ------ PUBLISH
 FROM build AS publish
-RUN dotnet publish "TJPA.HtmlToPdfService.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "Html2PdfApi.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 # ------ FINAL
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "TJPA.HtmlToPdfService.csproj.dll"]
+ENTRYPOINT ["dotnet", "Html2PdfApi.csproj.dll"]
