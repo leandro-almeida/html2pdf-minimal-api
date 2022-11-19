@@ -39,3 +39,7 @@ The following objects are optional:
 ## Response
 The PDF binary (bytes) file is included in the body section of the response as Base64 encoded string. 
 
+## Tips
+You can encode/decode for testing purposes using this site: 
+- HTML to Base64: https://base64.guru/converter/encode/html
+- Base64 to PDF: https://base64.guru/converter/decode/pdf
