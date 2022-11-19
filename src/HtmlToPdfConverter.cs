@@ -64,7 +64,7 @@ namespace HtmlToPdfApi
                 {
                     Left = request.CustomFooter.TextLeft,
                     Right = request.CustomFooter.TextRight,
-                    Center = request.CustomFooter.TextoCenter,
+                    Center = request.CustomFooter.TextCenter,
                     Line = request.CustomFooter.ShowLineAbove,
                     FontSize = request.CustomFooter.FontSize,
                     FontName = request.CustomFooter.FontName

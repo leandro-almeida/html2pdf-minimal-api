@@ -21,7 +21,7 @@
         public string FontName { get; init; } = "sans-serif";
         public string TextLeft { get; init; } = string.Empty;
         public string TextRight { get; init; } = string.Empty;
-        public string TextoCenter { get; init; } = string.Empty;
+        public string TextCenter { get; init; } = string.Empty;
         public bool ShowLineAbove { get; init; }
     }
 
