@@ -30,6 +30,7 @@ There is a single endpoint: `POST /convert`, receiving the following json body s
 ```
 
 The following objects are optional:
+- docTitle: you can specify a document title for the resulting PDF file
 - orientation: [0] Landscape, [1] Portrait (default)
 - customMargins:
   - unit: Unit of Measurement - [0] Inches, [1] Millimeters, [2] Centimeters
