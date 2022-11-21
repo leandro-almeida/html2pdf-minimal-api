@@ -27,7 +27,7 @@ ENV DOTNET_CLI_HOME=/tmp/
 WORKDIR /src
 COPY ["src/Html2PdfApi.csproj", "."]
 RUN dotnet restore "./Html2PdfApi.csproj"
-COPY src/. .
+COPY src/* .
 RUN dotnet build "Html2PdfApi.csproj" -c Release -o /app/build
 
 # ------ PUBLISH
@@ -38,4 +38,4 @@ RUN dotnet publish "Html2PdfApi.csproj" -c Release -o /app/publish /p:UseAppHost
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Html2PdfApi.csproj.dll"]
+ENTRYPOINT ["dotnet", "Html2PdfApi.dll"]
